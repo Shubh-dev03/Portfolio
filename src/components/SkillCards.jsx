@@ -132,7 +132,7 @@ export default function SkillCards() {
   return (
     <div
       ref={ref}
-      className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full"
+      className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full px-6 md:px-16"
     >
       {skillCategories.map((category) => (
         <SkillCard key={category.title} category={category} animate={animate} />
