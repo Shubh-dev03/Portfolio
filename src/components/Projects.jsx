@@ -1,4 +1,4 @@
-import { FaCar, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaCar, FaCoins, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 
 function Projects() {
   return (
@@ -17,7 +17,7 @@ function Projects() {
           {/* CampusRide Card */}
           <div className="flex flex-col bg-[#0f1628] flex-1 max-w-[31rem] rounded-xl px-6 py-4 mb-6">
             <div className="flex gap-4 ">
-              <span className="">
+              <span className="mt-2">
                 <FaCar />
               </span>
               <div>
@@ -59,6 +59,7 @@ function Projects() {
                   <FaExternalLinkAlt />
                 </span>
                 <a
+                  target="_blank"
                   href="https://campus-ride-fullstack-project.vercel.app/login"
                   className="text-xs font-bold"
                 >
@@ -71,6 +72,7 @@ function Projects() {
                   <FaGithub />
                 </span>
                 <a
+                  target="_blank"
                   href="https://github.com/Shubh-dev03/CampusRide-Fullstack-Project.git"
                   className="text-xs font-bold"
                 >
@@ -83,8 +85,8 @@ function Projects() {
           {/* Expense Tracker Card */}
           <div className="flex flex-col bg-[#0f1628] flex-1 max-w-[31rem] rounded-xl px-6 py-4">
             <div className="flex gap-4 ">
-              <span className="">
-                <FaCar />
+              <span className="mt-2">
+                <FaCoins />
               </span>
               <div>
                 {" "}
@@ -116,15 +118,19 @@ function Projects() {
             </div>{" "}
             <div className="flex gap-4 ">
               {" "}
-              <div className="flex gap-2 mt-4 place-items-center hover:text-[#06b6d4]">
+              {/* <div className="flex gap-2 mt-4 place-items-center hover:text-[#06b6d4]">
                 <span className="text-xs">
                   {" "}
                   <FaExternalLinkAlt />
                 </span>
-              </div>
+              </div> */}
               <div className="flex gap-2 mt-4 place-items-center hover:text-[#06b6d4]">
+                <span>
+                  <FaGithub />
+                </span>
                 <a
                   href="https://github.com/Shubh-dev03/ExpenseTracker_Backend.git"
+                  target="_blank"
                   className="text-xs font-bold"
                 >
                   Source Code

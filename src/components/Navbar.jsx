@@ -22,9 +22,12 @@ function Navbar() {
       {/* Inner div — constrains content to max width */}
       <div className="max-w-7xl mx-auto flex justify-between items-center h-14 px-6">
         {/* Logo */}
-        <span className="text-xl font-bold bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] bg-clip-text text-transparent">
+        <a
+          href="#"
+          className="text-xl font-bold bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] bg-clip-text text-transparent"
+        >
           &#60;SB&#47;&#62;
-        </span>
+        </a>
 
         {/* Desktop nav links — hidden on mobile */}
         <ul className="hidden md:flex flex-row gap-8 text-[#9ca3af] font-semibold">
@@ -41,9 +44,12 @@ function Navbar() {
         </ul>
 
         {/* Desktop CTA — hidden on mobile */}
-        <button className="hidden md:block bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] text-white font-semibold px-4 py-1.5 rounded-lg hover:opacity-90 transition duration-200">
+        <a
+          href="#contact"
+          className="hidden md:block bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] text-white font-semibold px-4 py-1.5 rounded-lg hover:opacity-90 transition duration-200"
+        >
           Let's Connect
-        </button>
+        </a>
 
         {/* Mobile hamburger / close button — hidden on desktop */}
         <button

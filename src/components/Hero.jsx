@@ -7,7 +7,7 @@ function Hero() {
       {/* Home Starts here */}
       {/* Left Side part */}
       <section>
-        <div className="px-6 md:px-16 flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="px-6 md:px-16 md:mt-6 flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left Side Content */}
           <div className="flex flex-col max-w-xl">
             <h1 className="text-4xl md:text-7xl text-white font-bold">
@@ -25,16 +25,22 @@ function Hero() {
               full-stack engineer. Passionate about creating scalable APIs and
               solving real-world problems.
             </p>
-            <div className="mt-10 mb-2">
-              <button className="bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] mr-6 px-4 md:px-6 py-2 md:py-3 rounded-lg text-white font-bold transition transform duration-300 hover:scale-[1.1]">
+            <div className=" flex gap-6 mt-10 mb-2">
+              <a
+                href="#projects"
+                className=" inline-block bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] px-4 md:px-6 py-2 md:py-3 rounded-lg text-white font-bold transition-transform duration-300 hover:scale-110"
+              >
                 View Projects &rarr;
-              </button>
-              <button className="border-2 border-slate-400 px-4 md:px-6 py-2 md:py-3 rounded-lg text-white font-bold transition transform duration-300 hover:scale-[1.1]">
-                <div className="flex items-center">
-                  <FaDownload className="mr-3" size={16} />
-                  Download CV
-                </div>
-              </button>
+              </a>
+              
+              <a
+                href="/Shubham_Dev_Resume.pdf"
+                download
+                className=" inline-flex items-center border-2 border-slate-400 px-4 md:px-6 py-2 md:py-3 rounded-lg text-white font-bold transition-transform duration-300 hover:scale-110"
+              >
+                <FaDownload className="mr-3" size={16} />
+                Download CV
+              </a>
             </div>
             <div className="flex flex-row items-center gap-4 mt-4">
               <p className="text-slate-500">Find me on</p>
