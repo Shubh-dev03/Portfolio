@@ -58,14 +58,24 @@ function Projects() {
                   {" "}
                   <FaExternalLinkAlt />
                 </span>
-                <h1 className="text-xs font-bold">Live Demo</h1>
+                <a
+                  href="https://campus-ride-fullstack-project.vercel.app/login"
+                  className="text-xs font-bold"
+                >
+                  Live Demo
+                </a>
               </div>
               <div className="flex gap-2 mt-4 place-items-center hover:text-[#8b5cf6]">
                 <span className="text-xs">
                   {" "}
                   <FaGithub />
                 </span>
-                <h1 className="text-xs font-bold">Source Code</h1>
+                <a
+                  href="https://github.com/Shubh-dev03/CampusRide-Fullstack-Project.git"
+                  className="text-xs font-bold"
+                >
+                  Source Code
+                </a>
               </div>
             </div>
           </div>
@@ -111,14 +121,14 @@ function Projects() {
                   {" "}
                   <FaExternalLinkAlt />
                 </span>
-                <h1 className="text-xs font-bold">Live Demo</h1>
               </div>
               <div className="flex gap-2 mt-4 place-items-center hover:text-[#06b6d4]">
-                <span className="text-xs">
-                  {" "}
-                  <FaGithub />
-                </span>
-                <h1 className="text-xs font-bold">Source Code</h1>
+                <a
+                  href="https://github.com/Shubh-dev03/ExpenseTracker_Backend.git"
+                  className="text-xs font-bold"
+                >
+                  Source Code
+                </a>
               </div>
             </div>
           </div>

@@ -1,4 +1,6 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 import { FaGithub, FaLinkedin, FaPhone } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
@@ -47,19 +49,55 @@ function Contact() {
     subject: "",
     message: "",
   });
-  const [submitted, setSubmitted] = useState(false);
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
 
-  function handleSubmit() {
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    // Wire up your backend / EmailJS / Formspree here
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 3000);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+
+    // Bug 3 fix — guard missing env vars early
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      console.error("EmailJS env vars are missing. Check your .env file.");
+      alert("Configuration error — please contact the site owner.");
+      return;
+    }
+
+    setLoading(true); // Bug 2 fix — disable button while sending
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        },
+        { publicKey }, // Bug 1 fix — object, not a raw string
+      );
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setSubmitted(false), 3000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert(
+        `Failed to send message: ${error?.text ?? error?.message ?? "Unknown error"}`,
+      );
+    } finally {
+      setLoading(false); // always re-enable button
+    }
   }
 
   return (
@@ -137,7 +175,8 @@ function Contact() {
         </div>
 
         {/* ── RIGHT — Contact form ───────────────────────────────────────── */}
-        <div
+        <form
+          onSubmit={handleSubmit}
           className="flex flex-col gap-6 rounded-2xl p-8 flex-1"
           style={{
             background: "#0f1628",
@@ -212,7 +251,7 @@ function Contact() {
 
           {/* Submit button */}
           <button
-            onClick={handleSubmit}
+            type="submit"
             className="w-full py-4 rounded-xl text-white font-semibold flex items-center
               justify-center gap-2 transition-all duration-300 hover:opacity-90 hover:scale-[1.01]"
             style={{
@@ -222,7 +261,9 @@ function Contact() {
             }}
           >
             {submitted ? (
-              <>✓ Message Sent!</>
+              "✓ Message Sent!"
+            ) : loading ? (
+              "Sending.."
             ) : (
               <>
                 <svg
@@ -243,7 +284,7 @@ function Contact() {
               </>
             )}
           </button>
-        </div>
+        </form>
       </div>
     </div>
   );
