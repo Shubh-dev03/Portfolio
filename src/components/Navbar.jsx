@@ -17,25 +17,29 @@ function Navbar() {
   }
 
   return (
-    // Outer div — stretches full screen width, holds the background
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#020817]/95 backdrop-blur-sm border-b border-white/5">
-      {/* Inner div — constrains content to max width */}
+    <nav
+      className="fixed top-0 left-0 w-full z-50 backdrop-blur-md"
+      style={{
+        background: "rgba(255,251,245,0.92)",
+        borderBottom: "1px solid #F0E6D3",
+      }}
+    >
       <div className="max-w-7xl mx-auto flex justify-between items-center h-14 px-6">
         {/* Logo */}
         <a
           href="#"
-          className="text-xl font-bold bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] bg-clip-text text-transparent"
+          className="text-xl font-bold bg-gradient-to-r from-[#3730A3] to-[#0D9488] bg-clip-text text-transparent"
         >
           &#60;SB&#47;&#62;
         </a>
 
-        {/* Desktop nav links — hidden on mobile */}
-        <ul className="hidden md:flex flex-row gap-8 text-[#9ca3af] font-semibold">
+        {/* Desktop Navigation */}
+        <ul className="hidden md:flex flex-row gap-8 text-[#78716C] font-semibold">
           {navLinks.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}
-                className="hover:bg-[#0f1628] px-3 py-1.5 rounded-lg hover:text-[#8b5cf6] transition-all duration-200"
+                className="px-3 py-1.5 rounded-lg hover:bg-[#FFF8EE] hover:text-[#3730A3] transition-all duration-200"
               >
                 {link.label}
               </a>
@@ -43,60 +47,67 @@ function Navbar() {
           ))}
         </ul>
 
-        {/* Desktop CTA — hidden on mobile */}
+        {/* CTA */}
         <a
           href="#contact"
-          className="hidden md:block bg-gradient-to-r from-[#7c3aed] to-[#06b6d4] text-white font-semibold px-4 py-1.5 rounded-lg hover:opacity-90 transition duration-200"
+          className="hidden md:block bg-gradient-to-r from-[#3730A3] to-[#0D9488]
+          text-white font-semibold px-4 py-1.5 rounded-lg
+          hover:opacity-90 transition duration-200"
         >
           Let's Connect
         </a>
 
-        {/* Mobile hamburger / close button — hidden on desktop */}
+        {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-slate-400 hover:text-white transition duration-200"
+          className="md:hidden text-[#78716C] hover:text-[#3730A3] transition duration-200"
           onClick={() => setMenuOpen((prev) => !prev)}
           aria-label="Toggle navigation menu"
         >
-          {/* Swap icon based on state */}
           {menuOpen ? <HiX size={26} /> : <HiMenu size={26} />}
         </button>
       </div>
 
-      {/* ── Mobile dropdown ─────────────────────────────────────────────────
-          Uses max-height transition trick:
-          - max-h-0   → collapsed (hidden but in DOM so transition works)
-          - max-h-96  → expanded
-          opacity fades in/out at the same time for a polished feel         */}
+      {/* Mobile Menu */}
       <div
         className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
           menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
-        style={{ background: "#0a0f1e" }}
+        style={{
+          background: "#FFF8EE",
+        }}
       >
-        <ul className="flex flex-col px-6 py-4 gap-1 border-t border-white/5">
+        <ul
+          className="flex flex-col px-6 py-4 gap-1"
+          style={{
+            borderTop: "1px solid #F0E6D3",
+          }}
+        >
           {navLinks.map((link) => (
             <li key={link.label}>
               <a
                 href={link.href}
                 onClick={closeMenu}
-                className="block px-4 py-3 rounded-lg text-[#9ca3af] font-medium
-                  hover:bg-[#0f1628] hover:text-[#8b5cf6] transition-all duration-200"
+                className="block px-4 py-3 rounded-lg text-[#78716C] font-medium
+                hover:bg-[#FFFBF5]
+                hover:text-[#3730A3]
+                transition-all duration-200"
               >
                 {link.label}
               </a>
             </li>
           ))}
 
-          {/* CTA button inside mobile menu */}
           <li className="mt-3">
-            <button
+            <a
+              href="#contact"
               onClick={closeMenu}
-              className="w-full bg-gradient-to-r from-[#7c3aed] to-[#06b6d4]
-                text-white font-semibold px-4 py-2.5 rounded-lg
-                hover:opacity-90 transition duration-200"
+              className="block w-full text-center
+              bg-gradient-to-r from-[#3730A3] to-[#0D9488]
+              text-white font-semibold px-4 py-2.5 rounded-lg
+              hover:opacity-90 transition duration-200"
             >
               Let's Connect
-            </button>
+            </a>
           </li>
         </ul>
       </div>

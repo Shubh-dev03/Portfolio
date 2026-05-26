@@ -4,7 +4,9 @@
 
 @layer base {
   body {
-    @apply bg-[#080d1a] text-white min-h-screen;
+    @apply min-h-screen;
+    background-color: #fffbf5;
+    color: #1c1917;
   }
 }
 html {

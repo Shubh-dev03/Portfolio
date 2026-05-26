@@ -43,13 +43,16 @@ function Footer() {
   return (
     <footer
       className="mt-16 border-t"
-      style={{ borderColor: "rgba(255,255,255,0.08)", background: "#080d1a" }}
+      style={{
+        borderColor: "#F0E6D3",
+        background: "#FFF8EE",
+      }}
     >
       {/* Top gradient separator line */}
       <div
         className="h-[2px] w-full"
         style={{
-          background: "linear-gradient(90deg, #7c3aed, #06b6d4, #ec4899)",
+          background: "linear-gradient(90deg, #3730A3, #0D9488)",
         }}
       />
 
@@ -57,21 +60,18 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* ── Col 1 — Brand ─────────────────────────────────────────── */}
           <div className="flex flex-col gap-5 max-w-[280px]">
-            {/* Logo */}
             <span
-              className="text-2xl font-bold bg-gradient-to-r from-[#7c3aed] to-[#06b6d4]
-                bg-clip-text text-transparent"
+              className="text-2xl font-bold bg-gradient-to-r from-[#3730A3] to-[#0D9488]
+              bg-clip-text text-transparent"
             >
               &lt;Shubham Bharti /&gt;
             </span>
 
-            {/* Tagline */}
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-[#78716C] text-sm leading-relaxed">
               Backend Developer building scalable RESTful APIs with Node.js and
               MongoDB. Expanding into full-stack development with React.
             </p>
 
-            {/* Social icons */}
             <div className="flex gap-3">
               {socialLinks.map((s) => (
                 <a
@@ -80,10 +80,14 @@ function Footer() {
                   target={s.href.startsWith("http") ? "_blank" : undefined}
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center text-slate-400
-                    bg-white/5 border border-white/10
-                    hover:text-white hover:border-[#7c3aed]/60 hover:bg-[#7c3aed]/15
-                    transition-all duration-300"
+                  className="w-9 h-9 rounded-lg flex items-center justify-center
+                  text-[#78716C]
+                  bg-[#FFFBF5]
+                  border border-[#F0E6D3]
+                  hover:text-[#3730A3]
+                  hover:border-[#3730A3]
+                  hover:bg-[#F5F3FF]
+                  transition-all duration-300"
                 >
                   {s.icon}
                 </a>
@@ -93,15 +97,16 @@ function Footer() {
 
           {/* ── Col 2 — Navigation ────────────────────────────────────── */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-white font-semibold tracking-widest text-xs uppercase">
+            <h4 className="text-[#1C1917] font-semibold tracking-widest text-xs uppercase">
               Navigation
             </h4>
+
             <ul className="flex flex-col gap-3">
               {navLinks.map((link) => (
                 <li key={link}>
                   <a
                     href={`#${link.toLowerCase()}`}
-                    className="text-slate-400 text-sm hover:text-[#8b5cf6] transition-colors duration-200"
+                    className="text-[#78716C] text-sm hover:text-[#3730A3] transition-colors duration-200"
                   >
                     {link}
                   </a>
@@ -112,26 +117,27 @@ function Footer() {
 
           {/* ── Col 3 — Contact info ──────────────────────────────────── */}
           <div className="flex flex-col gap-4">
-            <h4 className="text-white font-semibold tracking-widest text-xs uppercase">
+            <h4 className="text-[#1C1917] font-semibold tracking-widest text-xs uppercase">
               Contact
             </h4>
+
             <div className="flex flex-col gap-3">
               <a
                 href="mailto:shubhambharti478@gmail.com"
-                className="text-slate-400 text-sm hover:text-white transition-colors duration-200"
+                className="text-[#78716C] text-sm hover:text-[#3730A3] transition-colors duration-200"
               >
                 shubhambharti478@gmail.com
               </a>
-              <p className="text-slate-400 text-sm">Nashik, Maharashtra</p>
 
-              {/* Status dot */}
+              <p className="text-[#78716C] text-sm">Nashik, Maharashtra</p>
+
               <div className="flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
-                  {/* Pulsing green dot */}
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#0D9488] opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#0D9488]" />
                 </span>
-                <span className="text-slate-400 text-sm">
+
+                <span className="text-[#78716C] text-sm">
                   Seeking internship
                 </span>
               </div>
@@ -142,19 +148,24 @@ function Footer() {
         {/* ── Bottom bar ──────────────────────────────────────────────── */}
         <div
           className="mt-12 pt-6 flex flex-col md:flex-row items-center justify-between gap-4"
-          style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }}
+          style={{
+            borderTop: "1px solid #F0E6D3",
+          }}
         >
-          <p className="text-slate-500 text-sm flex items-center gap-1">
+          <p className="text-[#78716C] text-sm flex items-center gap-1">
             © {new Date().getFullYear()} Shubham Bharti. Made with{" "}
-            <span className="text-pink-500">♥</span> using React &amp; Tailwind
+            <span className="text-[#D97706]">♥</span> using React &amp; Tailwind
           </p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-slate-400 text-sm px-4 py-2 rounded-lg
-              bg-white/5 border border-white/10
-              hover:text-white hover:border-[#7c3aed]/50 hover:bg-[#7c3aed]/10
-              transition-all duration-300"
+            className="flex items-center gap-2 text-[#78716C] text-sm px-4 py-2 rounded-lg
+            bg-[#FFFBF5]
+            border border-[#F0E6D3]
+            hover:text-[#3730A3]
+            hover:border-[#3730A3]
+            hover:bg-[#F5F3FF]
+            transition-all duration-300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

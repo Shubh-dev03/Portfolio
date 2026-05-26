@@ -6,37 +6,38 @@ import { HiOutlineMail } from "react-icons/hi";
 import { HiOutlineLocationMarker } from "react-icons/hi";
 
 // ── DATA ──────────────────────────────────────────────────────────────────────
+
 const contactLinks = [
   {
     label: "EMAIL",
     value: "shubhambharti478@gmail.com",
     icon: <HiOutlineMail size={20} />,
-    iconBg: "bg-[#7c3aed]/20 border border-[#7c3aed]/40",
-    iconColor: "text-[#a78bfa]",
+    iconBg: "bg-[#EEF2FF] border border-[#C7D2FE]",
+    iconColor: "text-[#3730A3]",
     href: "mailto:shubhambharti478@gmail.com",
   },
   {
     label: "GITHUB",
     value: "github.com/Shubh-dev03",
     icon: <FaGithub size={18} />,
-    iconBg: "bg-white/10 border border-white/20",
-    iconColor: "text-white",
+    iconBg: "bg-[#FFF8EE] border border-[#F0E6D3]",
+    iconColor: "text-[#1C1917]",
     href: "https://github.com/Shubh-dev03",
   },
   {
     label: "LINKEDIN",
     value: "linkedin.com/in/shubham-s-bharti",
     icon: <FaLinkedin size={18} />,
-    iconBg: "bg-[#0077b5]/20 border border-[#0077b5]/40",
-    iconColor: "text-[#22d3ee]",
+    iconBg: "bg-[#E6FFFA] border border-[#99F6E4]",
+    iconColor: "text-[#0D9488]",
     href: "https://linkedin.com/in/shubham-s-bharti",
   },
   {
     label: "PHONE",
     value: "+91 7620395855",
     icon: <FaPhone size={16} />,
-    iconBg: "bg-[#ec4899]/20 border border-[#ec4899]/40",
-    iconColor: "text-[#ec4899]",
+    iconBg: "bg-[#FFF7ED] border border-[#FED7AA]",
+    iconColor: "text-[#D97706]",
     href: "tel:+917620395855",
   },
 ];
@@ -107,7 +108,7 @@ function Contact() {
         <p className="text-[#7c3aed] tracking-[0.3rem] text-sm uppercase mb-3">
           Get In Touch
         </p>
-        <h2 className="font-bold text-4xl md:text-5xl text-center leading-tight">
+        <h2 className="font-bold text-[#1C1917] text-4xl md:text-5xl text-center leading-tight">
           Let's Build Something Great <br /> Together
         </h2>
         <div className="mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#7c3aed] to-[#06b6d4]" />
@@ -119,17 +120,17 @@ function Contact() {
         <div
           className="flex flex-col gap-6 rounded-2xl p-8 md:max-w-[420px] w-full"
           style={{
-            background: "#0f1628",
-            border: "1px solid rgba(255,255,255,0.07)",
+            background: "#FFF8EE",
+            border: "1px solid #F0E6D3",
             borderTop: "2px solid",
-            borderImage: "linear-gradient(90deg, #7c3aed, #06b6d4) 1",
+            borderImage: "linear-gradient(90deg, #3730A3, #0D9488) 1",
           }}
         >
           <div>
-            <h3 className="text-white font-bold text-xl mb-3">
+            <h3 className="text-[#1C1917] font-bold text-xl mb-3">
               Looking for Internship Opportunities
             </h3>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-[#78716C] text-sm leading-relaxed">
               I'm actively seeking backend or full-stack internship
               opportunities where I can contribute to real-world systems and
               grow as an engineer. Let's connect if you're looking for someone
@@ -138,8 +139,8 @@ function Contact() {
           </div>
 
           {/* Location */}
-          <div className="flex items-center gap-2 text-slate-400 text-sm">
-            <HiOutlineLocationMarker size={16} className="text-[#7c3aed]" />
+          <div className="flex items-center gap-2 text-[#78716C] text-sm">
+            <HiOutlineLocationMarker size={16} className="text-[#3730A3]" />
             <span>Nashik, Maharashtra — Open to Remote</span>
           </div>
 
@@ -152,8 +153,8 @@ function Contact() {
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel="noopener noreferrer"
                 className="flex items-center gap-4 px-4 py-3 rounded-xl
-                  bg-white/5 border border-white/10
-                  hover:border-[#7c3aed]/50 hover:bg-[#7c3aed]/10
+                  bg-[#FFFBF5] border border-[#F0E6D3]
+                  hover:border-[#3730A3] hover:bg-[#F5F3FF]
                   transition-all duration-300 group"
               >
                 <div
@@ -162,10 +163,10 @@ function Contact() {
                   {item.icon}
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-widest text-slate-500 uppercase">
+                  <p className="text-[10px] tracking-widest text-[#78716C] uppercase">
                     {item.label}
                   </p>
-                  <p className="text-sm text-slate-300 group-hover:text-white transition-colors duration-200">
+                  <p className="text-sm text-[#1C1917] group-hover:text-[#3730A3] transition-colors duration-200">
                     {item.value}
                   </p>
                 </div>
@@ -179,39 +180,39 @@ function Contact() {
           onSubmit={handleSubmit}
           className="flex flex-col gap-6 rounded-2xl p-8 flex-1"
           style={{
-            background: "#0f1628",
-            border: "1px solid rgba(255,255,255,0.07)",
+            background: "#FFF8EE",
+            border: "1px solid #F0E6D3",
           }}
         >
-          <h3 className="text-white font-bold text-xl">Send a Message</h3>
+          <h3 className="text-[#1C1917] font-bold text-xl">Send a Message</h3>
 
           {/* Name + Email row */}
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex flex-col gap-1.5 flex-1">
-              <label className="text-slate-400 text-sm">Your Name</label>
+              <label className="text-[#78716C] text-sm">Your Name</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Alex Johnson"
-                className="px-4 py-3 rounded-xl text-white text-sm placeholder-slate-600
-                  bg-[#080d1a] border border-white/10
-                  focus:outline-none focus:border-[#7c3aed]/60 focus:ring-1 focus:ring-[#7c3aed]/30
+                className="px-4 py-3 rounded-xl text-[#000000] text-sm placeholder-[#A8A29E]
+                  bg-[#FFFBF5] border border-[#F0E6D3]
+                  focus:outline-none focus:border-[#3730A3] focus:ring-1 focus:ring-[#3730A3]/20
                   transition-all duration-200"
               />
             </div>
             <div className="flex flex-col gap-1.5 flex-1">
-              <label className="text-slate-400 text-sm">Email Address</label>
+              <label className="text-[#78716C] text-sm">Email Address</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="alex@example.com"
-                className="px-4 py-3 rounded-xl text-white text-sm placeholder-slate-600
-                  bg-[#080d1a] border border-white/10
-                  focus:outline-none focus:border-[#7c3aed]/60 focus:ring-1 focus:ring-[#7c3aed]/30
+                className="px-4 py-3 rounded-xl text-[#000000] text-sm placeholder-[#A8A29E]
+                  bg-[#FFFBF5] border border-[#F0E6D3]
+                  focus:outline-none focus:border-[#3730A3] focus:ring-1 focus:ring-[#3730A3]/20
                   transition-all duration-200"
               />
             </div>
@@ -219,32 +220,32 @@ function Contact() {
 
           {/* Subject */}
           <div className="flex flex-col gap-1.5">
-            <label className="text-slate-400 text-sm">Subject</label>
+            <label className="text-[#78716C] text-sm">Subject</label>
             <input
               type="text"
               name="subject"
               value={formData.subject}
               onChange={handleChange}
               placeholder="Let's work together!"
-              className="px-4 py-3 rounded-xl text-white text-sm placeholder-slate-600
-                bg-[#080d1a] border border-white/10
-                focus:outline-none focus:border-[#7c3aed]/60 focus:ring-1 focus:ring-[#7c3aed]/30
+              className="px-4 py-3 rounded-xl text-[#000000] text-sm placeholder-[#A8A29E]
+                bg-[#FFFBF5] border border-[#F0E6D3]
+                focus:outline-none focus:border-[#3730A3] focus:ring-1 focus:ring-[#3730A3]/20
                 transition-all duration-200"
             />
           </div>
 
           {/* Message */}
           <div className="flex flex-col gap-1.5 flex-1">
-            <label className="text-slate-400 text-sm">Message</label>
+            <label className="text-[#78716C] text-sm">Message</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Tell me about your project..."
               rows={6}
-              className="px-4 py-3 rounded-xl text-white text-sm placeholder-slate-600
-                bg-[#080d1a] border border-white/10 resize-none
-                focus:outline-none focus:border-[#7c3aed]/60 focus:ring-1 focus:ring-[#7c3aed]/30
+              className="px-4 py-3 rounded-xl text-[#000000] text-sm placeholder-[#A8A29E]
+                bg-[#FFFBF5] border border-[#F0E6D3] resize-none
+                focus:outline-none focus:border-[#3730A3] focus:ring-1 focus:ring-[#3730A3]/20
                 transition-all duration-200"
             />
           </div>
@@ -256,8 +257,8 @@ function Contact() {
               justify-center gap-2 transition-all duration-300 hover:opacity-90 hover:scale-[1.01]"
             style={{
               background: submitted
-                ? "linear-gradient(90deg, #10b981, #059669)"
-                : "linear-gradient(90deg, #7c3aed, #06b6d4)",
+                ? "linear-gradient(90deg, #0D9488, #14B8A6)"
+                : "linear-gradient(90deg, #3730A3, #0D9488)",
             }}
           >
             {submitted ? (
