@@ -59,7 +59,7 @@ function Footer() {
       <div className="px-6 md:px-16 py-12">
         <div className="flex flex-col md:flex-row justify-between gap-12">
           {/* ── Col 1 — Brand ─────────────────────────────────────────── */}
-          <div className="flex flex-col gap-5 max-w-[280px]">
+          <div className="flex flex-col gap-5 max-w-sm">
             <span
               className="text-2xl font-bold bg-gradient-to-r from-[#3730A3] to-[#0D9488]
               bg-clip-text text-transparent"

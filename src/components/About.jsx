@@ -81,10 +81,10 @@ function About() {
       </div>
 
       {/* Main Content */}
-      <div className="flex flex-col md:flex-row justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-16 flex flex-col lg:flex-row gap-10">
         {/* Left Bio Card */}
         <div
-          className="rounded-3xl px-8 py-8 m-4 md:ml-[8rem] text-balance max-w-[31rem]"
+          className="rounded-3xl px-8 py-8 m-4 text-balance max-w-[31rem]"
           style={{
             background: "#FFF8EE",
             border: "1px solid #F0E6D3",
@@ -137,9 +137,9 @@ function About() {
           {highlights.map((item) => (
             <div
               key={item.title}
-              className="flex gap-6 mb-6 ml-[2rem] mr-[8rem]
+              className="flex gap-6 mb-6
               px-4 py-4 min-h-[8rem]
-              w-[28rem] md:w-[32rem]
+              w-full max-w-[32rem]
               rounded-xl"
               style={{
                 background: "#FFF8EE",
@@ -165,12 +165,12 @@ function About() {
       </div>
 
       {/* Stats Grid */}
-      <div className="md:ml-[8rem] max-w-[31rem] flex flex-wrap gap-8 mt-4">
+      <div className=" max-w-[31rem] flex flex-wrap gap-8 mt-4">
         {stats.map((stat) => (
           <div
             key={stat.label}
             className="flex flex-col justify-center items-center
-            h-24 w-[14rem]
+            h-24 flex-1 min-w-[160px]
             rounded-xl pb-8 pt-6"
             style={{
               background: "#FFF8EE",

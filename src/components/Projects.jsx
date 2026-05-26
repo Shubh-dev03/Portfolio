@@ -17,9 +17,9 @@ function Projects() {
           <div className="mt-6 h-1 w-16 rounded-full bg-gradient-to-r from-[#3730A3] to-[#0D9488] mb-12"></div>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-8 px-6 md:px-16">
+        <div className="grid grid-cols-1 lg:grid-cols-2  justify-center gap-8 px-6 md:px-16">
           {/* CampusRide Card */}
-          <div className="flex flex-col bg-[#FFF8EE] border border-[#F0E6D3] flex-1 max-w-[31rem] rounded-xl px-6 py-4 mb-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div className="flex flex-col bg-[#FFF8EE]  border border-[#F0E6D3] flex-1 max-w-[31rem] rounded-xl px-6 py-4 mb-6 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="flex gap-4">
               <span className="mt-2 text-[#3730A3]">
                 <FaCar />
@@ -41,7 +41,7 @@ function Projects() {
               modules with 4 optimized MongoDB collections.
             </p>
 
-            <div className="mt-4 flex gap-2 flex-wrap">
+            <div className="mt-4 flex flex-wrap gap-2">
               <span className="bg-[#FFFBF5] text-xs border border-[#F0E6D3] text-[#78716C] px-3 py-1 rounded-lg">
                 Node.js
               </span>
@@ -97,7 +97,7 @@ function Projects() {
           </div>
 
           {/* Expense Tracker Card */}
-          <div className="flex flex-col bg-[#FFF8EE] border border-[#F0E6D3] flex-1 max-w-[31rem] rounded-xl px-6 py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
+          <div className="flex flex-col bg-[#FFF8EE] h-full border border-[#F0E6D3] flex-1 max-w-[31rem] rounded-xl px-6 py-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
             <div className="flex gap-4">
               <span className="mt-2 text-[#D97706]">
                 <FaCoins />

@@ -76,7 +76,7 @@ function SkillBar({ name, level, barGradient, percentColor, animate }) {
 function SkillCard({ category, animate }) {
   return (
     <div
-      className="rounded-2xl overflow-hidden flex flex-col shadow-sm hover:shadow-md transition-all duration-300"
+      className="rounded-2xl overflow-hidden flex flex-col h-full shadow-sm hover:shadow-md transition-all duration-300"
       style={{
         background: "#FFF8EE",
         border: "1px solid #F0E6D3",
@@ -142,7 +142,7 @@ export default function SkillCards() {
   return (
     <div
       ref={ref}
-      className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full px-6 md:px-16"
+      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-6 md:px-16"
     >
       {skillCategories.map((category) => (
         <SkillCard key={category.title} category={category} animate={animate} />

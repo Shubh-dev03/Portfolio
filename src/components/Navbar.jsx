@@ -24,7 +24,7 @@ function Navbar() {
         borderBottom: "1px solid #F0E6D3",
       }}
     >
-      <div className="max-w-7xl mx-auto flex justify-between items-center h-14 px-6">
+      <div className="max-w-7xl mx-auto flex justify-between items-center h-14 px-6 md:px-10">
         {/* Logo */}
         <a
           href="#"

@@ -31,7 +31,7 @@ function Skills() {
           </div>
 
           {/* Express */}
-          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105">
+          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105 min-w-[110px]">
             <span className="text-xl text-[#3730A3] font-bold mb-1">
               Express
             </span>
@@ -39,37 +39,37 @@ function Skills() {
           </div>
 
           {/* MongoDB */}
-          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105">
+          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105 min-w-[110px]">
             <span className="text-xl text-[#13AA52] font-bold mb-1">Mongo</span>
             <p className="text-xs text-[#78716C]">MongoDB</p>
           </div>
 
           {/* React */}
-          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105">
+          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105 min-w-[110px]">
             <span className="text-xl text-[#0D9488] font-bold mb-1">React</span>
             <p className="text-xs text-[#78716C]">React.js</p>
           </div>
 
           {/* JavaScript */}
-          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105">
+          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105 min-w-[110px]">
             <span className="text-xl text-[#D97706] font-bold mb-1">JS</span>
             <p className="text-xs text-[#78716C]">JavaScript</p>
           </div>
 
           {/* JWT */}
-          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105">
+          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105 min-w-[110px]">
             <span className="text-xl text-[#3730A3] font-bold mb-1">JWT</span>
             <p className="text-xs text-[#78716C]">JWT Auth</p>
           </div>
 
           {/* Git */}
-          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105">
+          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105 min-w-[110px]">
             <span className="text-xl text-[#F1502F] font-bold mb-1">Git</span>
             <p className="text-xs text-[#78716C]">Git</p>
           </div>
 
           {/* REST API */}
-          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105">
+          <div className="flex flex-col items-center px-5 py-4 rounded-xl border border-[#F0E6D3] bg-[#FFF8EE] transition duration-300 hover:scale-105 min-w-[110px]">
             <span className="text-xl text-[#3730A3] font-bold mb-1">API</span>
             <p className="text-xs text-[#78716C]">REST API</p>
           </div>

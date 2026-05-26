@@ -8,7 +8,7 @@ function Hero() {
         <div className="px-6 md:px-16 md:mt-6 flex flex-col md:flex-row items-center justify-between gap-12">
           {/* Left Side Content */}
           <div className="flex flex-col max-w-xl">
-            <h1 className="text-4xl md:text-7xl text-[#1C1917] font-bold">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl text-[#1C1917] font-bold">
               Hi, I'm{" "}
               <span className="bg-gradient-to-r from-[#3730A3] to-[#0D9488] bg-clip-text text-transparent">
                 Shubham <br /> Bharti
@@ -27,7 +27,7 @@ function Hero() {
               solving real-world problems.
             </p>
 
-            <div className="flex gap-6 mt-10 mb-2">
+            <div className="flex flex-col sm:flex-row gap-4 mt-10 mb-2">
               <a
                 href="#projects"
                 className="inline-block bg-gradient-to-r from-[#3730A3] to-[#0D9488]
@@ -101,7 +101,7 @@ function Hero() {
 
             {/* Main Circle */}
             <div
-              className="relative w-[340px] h-[340px] rounded-full flex items-center justify-center shadow-lg"
+              className="relative w-[260px] h-[260px] md:w-[340px] md:h-[340px] rounded-full flex items-center justify-center shadow-lg"
               style={{
                 background: "#FFF8EE",
                 border: "1px solid #F0E6D3",
@@ -120,7 +120,7 @@ function Hero() {
 
             {/* API Badge */}
             <div
-              className="absolute bottom-10 left-0 px-4 py-2 rounded-xl shadow-md"
+              className="absolute bottom-4 md:bottom-10 left-0 px-4 py-2 rounded-xl shadow-md"
               style={{
                 background: "#FFF8EE",
                 border: "1px solid #F0E6D3",
@@ -133,7 +133,7 @@ function Hero() {
 
             {/* Projects Badge */}
             <div
-              className="absolute -top-4 -right-4 px-4 py-2 rounded-xl shadow-md"
+              className="absolute top-0 md:top-4  right-0 md:right-4 px-4 py-2 rounded-xl shadow-md"
               style={{
                 background: "#FFF8EE",
                 border: "1px solid #F0E6D3",
@@ -146,7 +146,7 @@ function Hero() {
 
             {/* MERN Badge */}
             <div
-              className="absolute right-0 bottom-16 px-4 py-2 rounded-xl shadow-md"
+              className="absolute right-0 bottom-4 md:bottom-16 px-4 py-2 rounded-xl shadow-md"
               style={{
                 background: "#FFF8EE",
                 border: "1px solid #F0E6D3",

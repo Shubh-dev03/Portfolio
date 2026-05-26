@@ -118,7 +118,7 @@ function Contact() {
       <div className="flex flex-col md:flex-row gap-8 px-6 md:px-16">
         {/* ── LEFT — Info card ───────────────────────────────────────────── */}
         <div
-          className="flex flex-col gap-6 rounded-2xl p-8 md:max-w-[420px] w-full"
+          className="flex flex-col gap-6 rounded-2xl p-6 md:p-8 md:max-w-[420px] w-full"
           style={{
             background: "#FFF8EE",
             border: "1px solid #F0E6D3",
@@ -166,7 +166,7 @@ function Contact() {
                   <p className="text-[10px] tracking-widest text-[#78716C] uppercase">
                     {item.label}
                   </p>
-                  <p className="text-sm text-[#1C1917] group-hover:text-[#3730A3] transition-colors duration-200">
+                  <p className="text-sm text-[#1C1917] group-hover:text-[#3730A3] transition-colors duration-200 break-all">
                     {item.value}
                   </p>
                 </div>
