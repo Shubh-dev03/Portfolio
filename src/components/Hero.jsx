@@ -38,7 +38,7 @@ function Hero() {
               </a>
 
               <a
-                href="/Shubham_Dev_Resume.pdf"
+                href="/Shubham_Bharti_Resume.pdf"
                 download
                 className="inline-flex items-center border border-[#F0E6D3]
                 bg-[#FFF8EE]
