@@ -19,7 +19,7 @@ const projects = [
     links: [
       {
         label: "Live Demo",
-        href: "https://campus-ride-fullstack-project.vercel.app/login",
+        href: "https://campus-ride-fullstack-project.vercel.app/",
         icon: <FaExternalLinkAlt size={12} aria-hidden="true" />,
       },
       {

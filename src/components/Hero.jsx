@@ -92,7 +92,7 @@ function Hero() {
             </a>
 
             <a
-              href="/Shubham_Bharti_Resume.pdf.pdf"
+              href="/Shubham_Bharti_Resume.pdf"
               download
               className="btn btn-ghost"
             >
