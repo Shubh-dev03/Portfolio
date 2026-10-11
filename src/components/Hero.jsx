@@ -1,165 +1,172 @@
 import { FaGithub, FaLinkedin, FaDownload } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 
+// The hero shows the portfolio as an API response, using the real facts from the site.
+const fields = [
+  ["name", "Shubham Bharti"],
+  ["role", "Backend Developer"],
+  ["stack", "MERN"],
+  ["projects", "2+"],
+  ["apiEndpoints", "18+"],
+  ["location", "Nashik, Maharashtra"],
+  ["openTo", ["Internships", "Remote"]],
+];
+
+const socials = [
+  {
+    label: "GitHub",
+    href: "https://github.com/Shubh-dev03",
+    icon: <FaGithub size={18} />,
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/shubham-s-bharti",
+    icon: <FaLinkedin size={18} />,
+    external: true,
+  },
+  {
+    label: "Email",
+    href: "mailto:shubhambharti478@gmail.com",
+    icon: <HiOutlineMail size={19} />,
+    external: false,
+  },
+];
+
+function Value({ value }) {
+  if (Array.isArray(value)) {
+    return (
+      <>
+        <span className="text-chalk/50">[</span>
+        {value.map((item, i) => (
+          <span key={item}>
+            <span className="text-signal">&quot;{item}&quot;</span>
+            {i < value.length - 1 && <span className="text-chalk/50">, </span>}
+          </span>
+        ))}
+        <span className="text-chalk/50">]</span>
+      </>
+    );
+  }
+  return <span className="text-signal">&quot;{value}&quot;</span>;
+}
+
 function Hero() {
   return (
-    <div>
-      <section>
-        <div className="px-6 md:px-16 md:mt-6 flex flex-col md:flex-row items-center justify-between gap-12">
-          {/* Left Side Content */}
-          <div className="flex flex-col max-w-xl">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl text-[#1C1917] font-bold">
-              Hi, I'm{" "}
-              <span className="bg-gradient-to-r from-[#3730A3] to-[#0D9488] bg-clip-text text-transparent">
-                Shubham <br /> Bharti
-              </span>
-            </h1>
+    <section className="pb-20 pt-28 md:pb-28 md:pt-36 lg:pb-32">
+      <div className="wrap grid items-center gap-14 lg:grid-cols-12 lg:gap-10">
+        {/* Left: name and intro */}
+        <div className="lg:col-span-7">
+          <h1 className="display text-[clamp(4rem,15vw,13rem)]">
+            <span className="mask">
+              <span style={{ "--d": "100ms" }}>Shubham</span>
+            </span>
+            <span className="mask">
+              <span style={{ "--d": "220ms" }}>Bharti</span>
+            </span>
+          </h1>
 
-            <h2 className="text-[#3730A3] text-3xl font-bold mt-6 mb-6">
-              &#47;&#47;{" "}
-              <span className="text-[#78716C]">Backend Developer</span>
-            </h2>
+          <p
+            className="rise mt-8 font-display text-2xl font-semibold md:text-3xl"
+            style={{ "--d": "450ms" }}
+          >
+            Backend Developer
+          </p>
 
-            <p className="text-balance text-[#78716C] text-base leading-[1.7]">
-              Final-year CS student building RESTful backends with Node.js,
-              Express.js, and MongoDB. Expanding into React to become a
-              full-stack engineer. Passionate about creating scalable APIs and
-              solving real-world problems.
-            </p>
+          <p
+            className="rise mt-5 max-w-[34rem] text-pretty text-[1.2rem] leading-[1.65] text-ink-soft"
+            style={{ "--d": "550ms" }}
+          >
+            Final-year CS student building RESTful backends with Node.js,
+            Express.js, and MongoDB. Expanding into React to become a full-stack
+            engineer. Passionate about creating scalable APIs and solving
+            real-world problems.
+          </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-10 mb-2">
-              <a
-                href="#projects"
-                className="inline-block bg-gradient-to-r from-[#3730A3] to-[#0D9488]
-                px-4 md:px-6 py-2 md:py-3 rounded-lg text-white font-bold
-                transition-transform duration-300 hover:scale-105"
-              >
-                View Projects →
-              </a>
+          <div
+            className="rise mt-10 flex flex-col gap-3 sm:flex-row sm:items-center"
+            style={{ "--d": "650ms" }}
+          >
+            <a href="#projects" className="btn btn-primary">
+              <span>View Projects</span>
+            </a>
 
-              <a
-                href="/Shubham_Bharti_Resume.pdf.pdf"
-                download
-                className="inline-flex items-center border border-[#F0E6D3]
-                bg-[#FFF8EE]
-                px-4 md:px-6 py-2 md:py-3 rounded-lg
-                text-[#1C1917] font-bold
-                transition-all duration-300 hover:border-[#3730A3]"
-              >
-                <FaDownload className="mr-3" size={16} />
-                Download CV
-              </a>
-            </div>
-
-            <div className="flex flex-row items-center gap-4 mt-4">
-              <p className="text-[#78716C]">Find me on</p>
-
-              <ul className="flex flex-row items-center gap-4 list-none">
-                <li>
-                  <a
-                    href="https://github.com/Shubh-dev03"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#78716C] hover:text-[#3730A3] transition duration-300"
-                  >
-                    <FaGithub size={22} />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="https://linkedin.com/in/shubham-s-bharti"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#78716C] hover:text-[#0D9488] transition duration-300"
-                  >
-                    <FaLinkedin size={22} />
-                  </a>
-                </li>
-
-                <li>
-                  <a
-                    href="mailto:shubhambharti478@gmail.com"
-                    className="text-[#78716C] hover:text-[#D97706] transition duration-300"
-                  >
-                    <HiOutlineMail size={22} />
-                  </a>
-                </li>
-              </ul>
-            </div>
+            <a
+              href="/Shubham_Bharti_Resume.pdf.pdf"
+              download
+              className="btn btn-ghost"
+            >
+              <FaDownload size={14} aria-hidden="true" />
+              <span>Download CV</span>
+            </a>
           </div>
 
-          {/* Right Side */}
-          <div className="relative flex items-center justify-center w-[280px] h-[280px] md:w-[350px] md:h-[350px] shrink-0">
-            {/* Outer Glow */}
-            <div
-              className="absolute w-full h-full rounded-full blur-2xl opacity-10"
-              style={{
-                background: "linear-gradient(135deg, #3730A3, #0D9488)",
-              }}
-            />
-
-            {/* Main Circle */}
-            <div
-              className="relative w-[260px] h-[260px] md:w-[340px] md:h-[340px] rounded-full flex items-center justify-center shadow-lg"
-              style={{
-                background: "#FFF8EE",
-                border: "1px solid #F0E6D3",
-              }}
-            >
-              <div className="text-center">
-                <h1 className="text-5xl font-bold bg-gradient-to-r from-[#3730A3] to-[#0D9488] bg-clip-text text-transparent">
-                  SB
-                </h1>
-
-                <p className="text-sm text-[#78716C] mt-1">
-                  Full-stack Developer
-                </p>
-              </div>
-            </div>
-
-            {/* API Badge */}
-            <div
-              className="absolute bottom-4 md:bottom-10 left-0 px-4 py-2 rounded-xl shadow-md"
-              style={{
-                background: "#FFF8EE",
-                border: "1px solid #F0E6D3",
-              }}
-            >
-              <p className="text-[#0D9488] font-semibold text-sm">18+</p>
-
-              <p className="text-xs text-[#78716C]">API Endpoints</p>
-            </div>
-
-            {/* Projects Badge */}
-            <div
-              className="absolute top-0 md:top-4  right-0 md:right-4 px-4 py-2 rounded-xl shadow-md"
-              style={{
-                background: "#FFF8EE",
-                border: "1px solid #F0E6D3",
-              }}
-            >
-              <p className="text-[#3730A3] font-semibold text-sm">2+</p>
-
-              <p className="text-xs text-[#78716C]">Projects</p>
-            </div>
-
-            {/* MERN Badge */}
-            <div
-              className="absolute right-0 bottom-4 md:bottom-16 px-4 py-2 rounded-xl shadow-md"
-              style={{
-                background: "#FFF8EE",
-                border: "1px solid #F0E6D3",
-              }}
-            >
-              <p className="text-[#D97706] font-semibold text-sm">MERN</p>
-
-              <p className="text-xs text-[#78716C]">Tech Stack</p>
-            </div>
+          <div
+            className="rise mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 text-ink-soft"
+            style={{ "--d": "750ms" }}
+          >
+            <p>Find me on</p>
+            <ul className="flex flex-wrap items-center gap-x-6 gap-y-3">
+              {socials.map((s) => (
+                <li key={s.label}>
+                  <a
+                    href={s.href}
+                    target={s.external ? "_blank" : undefined}
+                    rel={s.external ? "noopener noreferrer" : undefined}
+                    className="link-u inline-flex items-center gap-2 text-ink transition-colors hover:text-pine"
+                  >
+                    {s.icon}
+                    {s.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
-      </section>
-    </div>
+
+        {/* Right: the portfolio as an API response */}
+        <div className="lg:col-span-5">
+          <figure
+            aria-label="Profile summary shown as an API response"
+            className="rise rounded-[28px] bg-pine p-6 text-chalk shadow-[0_30px_60px_-30px_rgb(17_28_23/0.55)] sm:p-8"
+            style={{ "--d": "500ms" }}
+          >
+            <figcaption className="flex flex-wrap items-center justify-between gap-x-4 gap-y-2 font-mono text-xs text-chalk/70">
+              <span className="break-all">GET /developer/shubham-bharti</span>
+              <span className="rounded-full bg-signal px-2.5 py-0.5 font-medium text-ink">
+                200 OK
+              </span>
+            </figcaption>
+
+            <pre className="mt-6 whitespace-pre-wrap break-words font-mono text-[13px] leading-7 sm:text-sm sm:leading-8">
+              <code>
+                <span className="text-chalk/50">{"{"}</span>
+                {fields.map(([key, value], i) => (
+                  <span
+                    key={key}
+                    className="rise block pl-4 sm:pl-6"
+                    style={{ "--d": `${800 + i * 110}ms` }}
+                  >
+                    <span className="text-chalk/70">&quot;{key}&quot;</span>
+                    <span className="text-chalk/50">: </span>
+                    <Value value={value} />
+                    {i < fields.length - 1 && (
+                      <span className="text-chalk/50">,</span>
+                    )}
+                  </span>
+                ))}
+                <span
+                  className="rise block text-chalk/50"
+                  style={{ "--d": `${800 + fields.length * 110}ms` }}
+                >
+                  {"}"}
+                </span>
+              </code>
+            </pre>
+          </figure>
+        </div>
+      </div>
+    </section>
   );
 }
 

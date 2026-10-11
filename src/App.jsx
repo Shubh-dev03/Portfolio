@@ -2,21 +2,21 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Skills from "./components/Skills";
-import SkillCards from "./components/SkillCards";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 function App() {
   return (
-    <div className="bg-[#FFFBF5] min-h-screen w-full pt-14">
+    <div className="min-h-screen w-full overflow-x-clip bg-mist">
       <Navbar />
-      <Hero />
-      <About />
-      <Skills />
-      <SkillCards />
-      <Projects />
-      <Contact />
+      <main>
+        <Hero />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
       <Footer />
     </div>
   );

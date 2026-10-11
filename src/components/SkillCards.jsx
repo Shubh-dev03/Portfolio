@@ -1,12 +1,10 @@
-import { useEffect, useRef, useState } from "react";
+import CountUp from "./CountUp";
+import Reveal from "./Reveal";
+import { useInView } from "../hooks/useInView";
 
 const skillCategories = [
   {
     title: "Frontend",
-    icon: "🎨",
-    borderGradient: "linear-gradient(90deg, #3730A3, #4F46E5)",
-    barGradient: "linear-gradient(90deg, #3730A3, #4F46E5)",
-    percentColor: "#3730A3",
     skills: [
       { name: "HTML", level: 85 },
       { name: "CSS", level: 80 },
@@ -16,10 +14,6 @@ const skillCategories = [
   },
   {
     title: "Backend",
-    icon: "⚙️",
-    borderGradient: "linear-gradient(90deg, #0D9488, #14B8A6)",
-    barGradient: "linear-gradient(90deg, #0D9488, #14B8A6)",
-    percentColor: "#0D9488",
     skills: [
       { name: "Node.js", level: 90 },
       { name: "Express.js", level: 88 },
@@ -30,10 +24,6 @@ const skillCategories = [
   },
   {
     title: "Database & Tools",
-    icon: "🛠️",
-    borderGradient: "linear-gradient(90deg, #D97706, #F59E0B)",
-    barGradient: "linear-gradient(90deg, #D97706, #F59E0B)",
-    percentColor: "#D97706",
     skills: [
       { name: "MongoDB", level: 88 },
       { name: "MongoDB Atlas", level: 85 },
@@ -44,109 +34,66 @@ const skillCategories = [
   },
 ];
 
-function SkillBar({ name, level, barGradient, percentColor, animate }) {
-  return (
-    <div className="mb-4">
-      <div className="flex justify-between items-center mb-1.5">
-        <span className="text-sm text-[#78716C]">{name}</span>
+// Each segment is 5%, so a level of 85 lights 17 of 20.
+const SEGMENTS = 20;
 
-        <span className="text-sm font-semibold" style={{ color: percentColor }}>
-          {level}%
+function SkillRow({ name, level, groupDelay }) {
+  const [ref, inView] = useInView({ threshold: 0.6, rootMargin: "0px" });
+  const lit = Math.round((level / 100) * SEGMENTS);
+
+  return (
+    <li ref={ref} className="py-3.5">
+      <div className="flex items-baseline justify-between gap-4">
+        <span className="text-lg text-chalk/90">{name}</span>
+        <span className="font-display text-lg font-bold text-signal">
+          <CountUp end={level} suffix="%" play={inView} />
         </span>
       </div>
 
-      {/* Track */}
       <div
-        className="w-full h-1.5 rounded-full overflow-hidden"
-        style={{ background: "#F0E6D3" }}
+        role="img"
+        aria-label={`${name}: ${level}%`}
+        className="mt-2.5 flex gap-[3px]"
       >
-        {/* Fill */}
-        <div
-          className="h-full rounded-full transition-all duration-1000 ease-out"
-          style={{
-            width: animate ? `${level}%` : "0%",
-            background: barGradient,
-          }}
-        />
-      </div>
-    </div>
-  );
-}
-
-function SkillCard({ category, animate }) {
-  return (
-    <div
-      className="rounded-2xl overflow-hidden flex flex-col h-full shadow-sm hover:shadow-md transition-all duration-300"
-      style={{
-        background: "#FFF8EE",
-        border: "1px solid #F0E6D3",
-      }}
-    >
-      {/* Top gradient border line */}
-      <div
-        className="h-[3px] w-full"
-        style={{ background: category.borderGradient }}
-      />
-
-      <div className="p-6 flex flex-col flex-1">
-        {/* Header */}
-        <div className="flex items-center gap-3 mb-6">
-          <div
-            className="w-10 h-10 rounded-xl flex items-center justify-center text-xl"
+        {Array.from({ length: SEGMENTS }, (_, i) => (
+          <span
+            key={i}
+            className={`h-2 flex-1 rounded-[2px] transition-colors duration-500 ${
+              inView && i < lit ? "bg-signal" : "bg-chalk/15"
+            }`}
             style={{
-              background: "#FFFBF5",
-              border: "1px solid #F0E6D3",
+              transitionDelay: inView ? `${groupDelay + i * 35}ms` : "0ms",
             }}
-          >
-            {category.icon}
-          </div>
-
-          <h3 className="text-[#1C1917] font-bold text-lg">{category.title}</h3>
-        </div>
-
-        {/* Skill bars */}
-        <div className="flex-1">
-          {category.skills.map((skill) => (
-            <SkillBar
-              key={skill.name}
-              name={skill.name}
-              level={skill.level}
-              barGradient={category.barGradient}
-              percentColor={category.percentColor}
-              animate={animate}
-            />
-          ))}
-        </div>
+          />
+        ))}
       </div>
-    </div>
+    </li>
   );
 }
 
-export default function SkillCards() {
-  const [animate, setAnimate] = useState(false);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setAnimate(true);
-      },
-      { threshold: 0.2 },
-    );
-
-    if (ref.current) observer.observe(ref.current);
-
-    return () => observer.disconnect();
-  }, []);
-
+function SkillCards() {
   return (
-    <div
-      ref={ref}
-      className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-full px-6 md:px-16"
-    >
-      {skillCategories.map((category) => (
-        <SkillCard key={category.title} category={category} animate={animate} />
+    <div className="grid gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-12">
+      {skillCategories.map((category, i) => (
+        <Reveal key={category.title} delay={i * 100}>
+          <h3 className="display border-b border-chalk/25 pb-4 text-4xl">
+            {category.title}
+          </h3>
+
+          <ul className="mt-3">
+            {category.skills.map((skill) => (
+              <SkillRow
+                key={skill.name}
+                name={skill.name}
+                level={skill.level}
+                groupDelay={i * 100}
+              />
+            ))}
+          </ul>
+        </Reveal>
       ))}
     </div>
   );
 }
+
+export default SkillCards;
